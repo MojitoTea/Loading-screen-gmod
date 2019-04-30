@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Loader</title>
+	 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Bad+Script'>
+
+	<style>
+		body{
+			background-image: url('Snow.jpg');
+			background-size: 100%;
+			overflow-x: hidden;
+		}
+
+		.lightrope {
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+  margin: -15px 0 0 0;
+  padding: 0;
+  pointer-events: none;
+  width: 100%;
+}
+.lightrope li {
+  position: relative;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 12px;
+  height: 28px;
+  border-radius: 50%;
+  margin: 20px;
+  display: inline-block;
+  background: #00f7a5;
+  box-shadow: 0px 4.6666666667px 24px 3px #00f7a5;
+  -webkit-animation-name: flash-1;
+          animation-name: flash-1;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+.lightrope li:nth-child(2n+1) {
+  background: cyan;
+  box-shadow: 0px 4.6666666667px 24px 3px rgba(0, 255, 255, 0.5);
+  -webkit-animation-name: flash-2;
+          animation-name: flash-2;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+}
+.lightrope li:nth-child(4n+2) {
+  background: #f70094;
+  box-shadow: 0px 4.6666666667px 24px 3px #f70094;
+  -webkit-animation-name: flash-3;
+          animation-name: flash-3;
+  -webkit-animation-duration: 1.1s;
+          animation-duration: 1.1s;
+}
+.lightrope li:nth-child(odd) {
+  -webkit-animation-duration: 1.8s;
+          animation-duration: 1.8s;
+}
+.lightrope li:nth-child(3n+1) {
+  -webkit-animation-duration: 1.4s;
+          animation-duration: 1.4s;
+}
+.lightrope li:before {
+  content: "";
+  position: absolute;
+  background: #222;
+  width: 10px;
+  height: 9.3333333333px;
+  border-radius: 3px;
+  top: -4.6666666667px;
+  left: 1px;
+}
+.lightrope li:after {
+  content: "";
+  top: -14px;
+  left: 9px;
+  position: absolute;
+  width: 52px;
+  height: 18.6666666667px;
+  border-bottom: solid #222 2px;
+  border-radius: 50%;
+}
+.lightrope li:last-child:after {
+  content: none;
+}
+.lightrope li:first-child {
+  margin-left: -40px;
+}
+
+@-webkit-keyframes flash-1 {
+  0%, 100% {
+    background: #00f7a5;
+    box-shadow: 0px 4.6666666667px 24px 3px #00f7a5;
+  }
+  50% {
+    background: rgba(0, 247, 165, 0.4);
+    box-shadow: 0px 4.6666666667px 24px 3px rgba(0, 247, 165, 0.2);
+  }
+}
+
+@keyframes flash-1 {
+  0%, 100% {
+    background: #00f7a5;
+    box-shadow: 0px 4.6666666667px 24px 3px #00f7a5;
+  }
+  50% {
+    background: rgba(0, 247, 165, 0.4);
+    box-shadow: 0px 4.6666666667px 24px 3px rgba(0, 247, 165, 0.2);
+  }
+}
+@-webkit-keyframes flash-2 {
+  0%, 100% {
+    background: cyan;
+    box-shadow: 0px 4.6666666667px 24px 3px cyan;
+  }
+  50% {
+    background: rgba(0, 255, 255, 0.4);
+    box-shadow: 0px 4.6666666667px 24px 3px rgba(0, 255, 255, 0.2);
+  }
+}
+@keyframes flash-2 {
+  0%, 100% {
+    background: cyan;
+    box-shadow: 0px 4.6666666667px 24px 3px cyan;
+  }
+  50% {
+    background: rgba(0, 255, 255, 0.4);
+    box-shadow: 0px 4.6666666667px 24px 3px rgba(0, 255, 255, 0.2);
+  }
+}
+@-webkit-keyframes flash-3 {
+  0%, 100% {
+    background: #f70094;
+    box-shadow: 0px 4.6666666667px 24px 3px #f70094;
+  }
+  50% {
+    background: rgba(247, 0, 148, 0.4);
+    box-shadow: 0px 4.6666666667px 24px 3px rgba(247, 0, 148, 0.2);
+  }
+}
+@keyframes flash-3 {
+  0%, 100% {
+    background: #f70094;
+    box-shadow: 0px 4.6666666667px 24px 3px #f70094;
+  }
+  50% {
+    background: rgba(247, 0, 148, 0.4);
+    box-shadow: 0px 4.6666666667px 24px 3px rgba(247, 0, 148, 0.2);
+  }
+}
+ #text,
+    #shadow {
+        position: absolute;
+        margin: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 7em;
+        letter-spacing: 20px;
+        font-family: Bad Script;
+        color: #fff;
+    }
+
+    #text {
+        color: #333
+    }
+
+    #shadow {
+        text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+    }
+
+   #glow {
+        animation: neon1 linear infinite 2s;
+        will-change: opacity;
+    }
+
+    #blink {
+        animation: blink linear infinite 2s;
+    }
+
+
+    @keyframes neon1 {
+        20% {
+            opacity: 1;
+        }
+        80% {
+            opacity: 0.6;
+        }
+    }
+
+
+    @keyframes blink {
+        70% {
+            opacity: 1;
+        }
+        79% {
+            opacity: 0;
+        }
+        81% {
+            opacity: 1;
+        }
+        82% {
+            opacity: 0;
+        }
+        83% {
+            opacity: 1;
+        }
+        92% {
+            opacity: 0;
+        }
+        92.5% {
+            opacity: 1;
+        }
+    }
+	</style>
+</head>
+<body>
+
+  <ul class="lightrope">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+<div id="container">
+  
+
+    <p id="text">GambitRP</p>
+  
+    <p id="shadow">
+        <span id="glow">Gambit</span><span id="blink">RP</span>
+    </p>
+  
+</div>
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+  
+
+
+</body>
+</html>
